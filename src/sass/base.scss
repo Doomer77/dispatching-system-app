@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+// font-family: 'Bebas Neue', cursive;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  @include linear-gradient-bcg-1;
+  &__image-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  &__image {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    &--grid {
+      left: 50%;
+      width: 90%;
+      height: 40%;
+      bottom: 10rem;
+      position: absolute;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+    &--circle-1 {
+      display: block;
+      width: 20rem;
+      top: 12rem;
+      right: 12rem;
+      z-index: 4;
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: jumpingTriangle 25s linear forwards infinite;
+      @media (max-width: 756px) {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes jumpingTriangle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
